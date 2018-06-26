@@ -1,0 +1,9 @@
+module.exports={
+    name:"N-Blog",
+    email:{
+        service:"QQ",
+        user:"616858970@qq.com",
+        pass:"zjuoramvircnbeaf"
+    },
+    mongodb:"mongodb://localhost:27017/N-Blog"
+}

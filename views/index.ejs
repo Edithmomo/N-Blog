@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>N博客_文章</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/idangerous.swiper.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="box" id="box">
+        <ul class="col1" id="col1">
+            <li>欢</li>
+            <li>迎</li>
+            <li>访</li>
+            <li>问</li>
+            <li>N</li>
+            <li>博</li>
+            <li>客</li>
+            <li>！</li>
+        </ul>
+        <ul class="col2" id="col2">
+            <li>欢</li>
+            <li>迎</li>
+            <li>访</li>
+            <li>问</li>
+            <li>N</li>
+            <li>博</li>
+            <li>客</li>
+            <li>！</li>
+        </ul>
+    </div>
+    <%-include header%>
+    </div>
+    <div id="body_wrapper" class="container1">
+        <article>
+            <div class="device">
+                <a class="arrow-left" href="#"></a>
+                <a class="arrow-right" href="#"></a>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide-duplicate">
+                            <div class="content-slide">
+                                <p class="title">欢迎来到N博客_文章</p>
+                                <p>这里一定能找到你要的东西! 我们不制造文章我们只是文章的搬运工！</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="">
+                            <img src="/images/lunbo1.jpg"/> 
+                          </a>
+                          </div>
+                        <div class="swiper-slide swiper-slide-visible swiper-slide-active">
+                           <a href="">
+                              <img src="/images/lunbo2.jpg "> 
+                           </a>
+                        </div>
+                       <div class="swiper-slide swiper-slide-visible swiper-slide-active "> 
+                          <a href="">
+                           <img src="/images/lunbo3.jpg"> 
+                         </a>
+                      </div>
+                        <div class="swiper-slide swiper-slide-visible swiper-slide-active" <div class="swiper-slide swiper-slide-duplicate"> 
+                           <a href="">
+                              <img src="/images/lunbo6.jpg"> 
+                         </a>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <span class="swiper-pagination-switch"></span>
+                    <span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span>
+                    <span class="swiper-pagination-switch"></span>
+                </div>
+            </div>
+        </div>
+            <section id="smart">
+                <div id="title_bg">
+                    <h2><a href="/list" class="rengong"><b>人工智能</b></a><a href="/search?list=人工智能" class="more">More>></a></h2>
+                </div>
+                <div class="mediaContent" style="padding-top: 20px;">
+                <%if(dataStr.smart){%>
+                 <%- dataStr.smart%>
+                <%}else{%>
+                    <ul style="margin-top: 40px;">
+                        <li class="text-center">
+                            <img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+                        </li>
+                        <li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+                    </ul>
+                  <%}%>
+                </div>
+            </section>
+            <section id="Cloud">
+                <div id="title_bg" style="margin-bottom: 20px;" >
+                    <h2><a href="/list"><b>云计算/大数据</b></a><a href="/search?list=云计算/大数据" class="more">More>></a></h2>
+                </div>
+                <section id="Cloud_a" >
+                    <div class="row" >
+                        <div class="col-xs-6 col-md-3 myLiMar">
+                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="HBase学习">HBase学习
+                                <a href="/details?_id=5b066f508bf2a6138c946a3f" class="thumbnail">
+                      <img src="/images/yun1.jpg" alt="...">
+                    </a>
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-md-3 myLiMar">
+                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="ZipKin入门">ZipKin入门
+                                <a href="/details?_id=5b0672e24e94b91bf0a583c1" class="thumbnail">
+                      <img src="/images/yun2.jpg" alt="...">
+                    </a>
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-md-3 myLiMar">
+                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="spark进阶之路">spark进阶之路
+                                <a href="/details?_id=5b0673474e94b91bf0a583c3" class="thumbnail">
+                      <img src="/images/yuun3.jpg" alt="...">
+                    </a>
+                            </button>
+                        </div>
+                         <div class="col-xs-6 col-md-3 myLiMar">
+                            <button type="button" class="btn btn-default " data-toggle="tooltip" data-placement="left" title="ELK快速部署及简单使用">ELK快速部署及...
+                                <a href="/details?_id=5b06764a4e94b91bf0a583c7" class="thumbnail">
+                      <img src="/images/yun5.jpg" alt="...">
+                    </a>
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-md-3 myLiMar">
+                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Django2.0教程">Django2.0教程
+                                <a href="/details?_id=5b0674974e94b91bf0a583c5" class="thumbnail">
+                      <img src="/images/yun6.jpg" alt="...">
+                    </a>
+                            </button>
+                        </div>
+                        <div class="col-xs-6 col-md-3 myLiMar">
+                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Shell编程-基础">Shell编程-基础
+                                <a href="details?_id=5b0676d64e94b91bf0a583c9" class="thumbnail">
+                      <img src="/images/yun7.jpg" alt="...">
+                    </a>
+                            </button>
+                        </div>
+                </section>
+                <section id="Cloud_b">
+                    <ul>
+                     <%if(dataStr.bigData){%>
+                     <%- dataStr.bigData%>
+                    <%}else{%>
+                        <ul style="margin-top: 40px;">
+                            <li class="text-center">
+                                <img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+                            </li>
+                            <li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+                        </ul>
+                      <%}%>
+                </section>
+        </article>
+        <aside>
+            <section id="game">
+                <div id="title_bg">
+                    <h2><a href="list.html"><b>游戏开发</b></a><a href="/search?list=游戏开发" class="more">More>></a></h2>
+                </div>
+                <section id="game_a">
+                    <ul>
+                        <li><a href="content.html"><img  src="/images/kaifa1.jpg" alt=""></a>
+                            <span>
+                          <a href="content.html">小型游戏开发</a>
+                        </span>
+                        </li>
+                        <li>
+                            <a href="content.html">
+                              <img  src="/images/kaifa2.jpg" alt="">
+                            </a>
+                            <span><a href="content.html">大型3D游戏开发</a></span>
+                        </li>
+                    </ul>
+                </section>
+                <section id="game_b">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-3" title="cehfajh">
+                            <a href="#" class="thumbnail">
+                      <img src="/images/kaifa3.jpg" alt="...">
+                    </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                      <img src="/images/kaifa4.jpg" alt="...">
+                    </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                      <img src="/images/kaifa5.jpg" alt="...">
+                    </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                      <img src="/images/kaifa6.jpg" alt="...">
+                    </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                      <img src="/images/kaifa7.jpg" alt="...">
+                    </a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                      <img src="/images/kaifa8.jpg" alt="...">
+                    </a>
+                        </div>
+                </section>
+            </section>
+            <section id="qianduan">
+                <div id="title_bg">
+                    <h2><a href="" ><b>前端</b></a><a href="/search?list=前端" class="more">More>></a></h2>
+                </div id="qianduan_text">
+                <ul>
+                  <%if(dataStr.qianDuan){%>
+                     <%- dataStr.qianDaun%>
+                  <%}else{%>
+                    <ul style="margin-top: 40px;">
+                        <li class="text-center">
+                            <img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+                        </li>
+                        <li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+                    </ul>
+                  <%}%>
+                </ul>
+            </section>
+            <section id="contact">
+                <div id="title_bg">
+                    <h2><a href="/list">联系我们</a><a href="/aboutAs" class="more">More>></a></h2>
+                </div>
+                <ul id="contact_img">
+                    <li><a href="content.html"><img src="/images/kefu.jpg" alt=""></a></li>
+                </ul>
+            </section>
+            <section id="link">
+                <div id="title_bg">
+                    <h2><a href="/list"><b>友情链接</b></a></h2>
+                </div>
+                <ul>
+                    <li>
+                        <h4><a href="http://www.bootcss.com/">Bootstrap中文网</a></h4></li>
+                </ul>
+                <div id="link_jj">
+                    <a href="http://www.bootcss.com/"><img src="../images/lianjie.jpg" alt=""></a><a href="">简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。</a>
+                </div>
+                <ul>
+                    <li>
+                        <h4><a href="https://www.jquery123.com/">jQuery API 中文文档</a></h4></li>
+                </ul>
+                <div id="link_jj">
+                    <a href="https://www.jquery123.com/"><img src="../images/lianjie2.jpg" alt=""></a><a href="https://www.jquery123.com/">jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库。</a>
+                </div>
+                <ul>
+                    <li>
+                        <h4><a href="https://vuejs.bootcss.com/">Vue.js</a></h4></li>
+                </ul>
+                <div id="link_jj">
+                    <a href="https://vuejs.bootcss.com/"><img src="../images/lianjie4.jpg" alt=""></a><a href="">渐进式
+JavaScript 框架, 是一套用于构建用户界面的 渐进式框架 。</a>
+                </div>
+        </section>
+        </div>
+        </div>
+    </aside>
+     <%-include footer%>
+  </div>
+    <script src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script src="/js/idangerous.swiper.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/lunbo.js"></script>
+    <script src="/js/menu.js"></script>
+</body>
+</html>

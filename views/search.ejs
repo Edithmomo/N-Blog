@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>排行榜</title>
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/css/index.css">
+   <link rel="stylesheet" href="/css/piclist.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head> 
+<body>
+<%-include header%>
+  <div class="public">
+	  <article class="article fl">	
+	     <h1 class="title_h1"><span class="glyphicon glyphicon-tags"></span>人工智能排行榜</h1>
+	  		<div class="article_list">
+	  		<ul>
+	  			<%if(dataStr.smart){%>
+	  			 <%- dataStr.smart%>
+	  			<%}else{%>
+	  			  	<ul style="margin-top: 40px;">
+	  			  		<li class="text-center">
+	  			  			<img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+	  			  		</li>
+	  			  		<li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+	  			  	</ul>
+	  			  <%}%>
+	  		</ul>
+	  		</div>
+	  		 <h1 class="title_h1"><span class="glyphicon glyphicon-tags"></span>云计算/大数据排行榜</h1>
+	  		<div class="article_list">
+	  		<ul>
+	  			<%if(dataStr.bigData){%>
+	  			 <%- dataStr.bigData%>
+	  			<%}else{%>
+	  			  	<ul style="margin-top: 40px;">
+	  			  		<li class="text-center">
+	  			  			<img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+	  			  		</li>
+	  			  		<li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+	  			  	</ul>
+	  			  <%}%>
+	  		</ul>
+	  		</div>
+	  		<div class="border_solid"></div>
+	  		 <h1 class="title_h1"><span class="glyphicon glyphicon-tags"></span>游戏开发排行榜</h1>
+	  		<div class="article_list">
+	  		<ul>
+	  			<%if(dataStr.game){%>
+	  			 <%- dataStr.game%>
+	  			<%}else{%>
+	  			  	<ul style="margin-top: 40px;">
+	  			  		<li class="text-center">
+	  			  			<img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+	  			  		</li>
+	  			  		<li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+	  			  	</ul>
+	  			  <%}%>
+	  		</ul>
+	  		</div>
+	  		 <h1 class="title_h1"><span class="glyphicon glyphicon-tags"></span>前端排行榜</h1>
+	  		<div class="article_list">
+	  		<ul>
+	  			<%if(dataStr.qianDuan){%>
+	  			 <%- dataStr.qianDaun%>
+	  			<%}else{%>
+	  			  	<ul style="margin-top: 40px;">
+	  			  		<li class="text-center">
+	  			  			<img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+	  			  		</li>
+	  			  		<li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+	  			  	</ul>
+	  			  <%}%>
+	  		</ul>
+	  		</div>
+	  </article>
+	  <aside class="aside fr">
+		  <div style="width: 770px;">
+		  	<%if(type){%>
+		  	   <h3 style="line-height: 24px;box-shadow: 5px 3px 5px #888;">
+	  			<span class="glyphicon glyphicon-bookmark" style="margin: 10px;color: #FF6347;"></span><%=searchContent%></h3>
+		  	<%} else{%>
+		  	  <h3 style="line-height: 24px;box-shadow: 5px 3px 5px #888;">
+	  			<span class="glyphicon glyphicon-search" style="margin: 10px;color: #00FF00;"></span><span style="color: #20B2AA">‘<%=searchContent%>’</span>的查询结果</h3>
+		  	<%}%>
+	  		<ul>
+	  			<%if(dataStr.searchData){%>
+	  			 <%- dataStr.searchData%>
+	  			<%}else{%>
+	  			  	<ul style="margin-top: 40px;">
+	  			  		<li class="text-center">
+	  			  			<img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+	  			  		</li>
+	  			  		<li ><h4 class="text-center" style="color: #bfbfbf;">请输入有效关键字</h4></li>
+	  			  		<li >
+	  			  			<h4 class="text-center" style="color: #bfbfbf;">或者返回<a style="color: #337ab7;" href="/">首页</a></h4>
+	  			  		</li>
+	  			  	</ul>
+	  			  <%}%>
+	  		</ul>
+	  		 <div>
+              <nav aria-label="Page navigation">
+              <ul class="pagination" style="position: static;">
+                <%- pager%>
+              </ul>
+            </nav>
+            </div>
+	  	</div>
+	  </aside>
+  </div>
+</body>
+	<script type="text/javascript" src="/js/jQuery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script src="/js/idangerous.swiper.js"></script> 
+    <script>
+    	$(function() {
+            $(".piclist").removeClass("on");
+            $(".piclist").siblings().removeClass("on");
+        })
+    </script>
+</html>

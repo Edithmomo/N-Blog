@@ -1,0 +1,264 @@
+body {
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Gudea', sans-serif;
+  background-color: #242645;
+  background-size: cover;
+  background-image: url(../images/Starry.jpg);
+  /* Old browsers */
+  /* FF3.6+ */
+ 
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA5C54 ', endColorstr='#bb6dec',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+.layout{
+  box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.7);
+  opacity: 1;
+  top: 20px;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, 0.85);
+  -webkit-transition-property: -webkit-transform,opacity,box-shadow,top,left;
+          transition-property: transform,opacity,box-shadow,top,left;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transform-origin: 161px 100%;
+      -ms-transform-origin: 161px 100%;
+          transform-origin: 161px 100%;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  position: relative;
+  width: 280px;
+  /*border-top: 2px solid #D8312A;*/
+  height: 320px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  padding: 50px 40px 40px 40px;
+  background: #35394a;
+  /* Old browsers */
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #35394a), color-stop(100%, rgb(0, 0, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(53, 57, 74, 0)', endColorstr='rgb(0, 0, 0)',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+.validation {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 14px;
+  opacity: 0;
+
+}
+.disclaimer {
+  position: absolute;
+  bottom: 20px;
+  left: 35px;
+  width: 250px;
+  color: #D3D7F7;
+}
+.disclaimer p {
+ text-align: center;
+ font-size: 10px;
+}
+.title {
+  color: #D3D7F7;
+  height: 60px;
+  font-size: 20px;
+  text-align: center;
+}
+.fields {
+  height: 208px;
+  position: absolute;
+  left: 15px;
+}
+.fields_user, .fields_password {
+  position: relative;
+}
+.fields .icon {
+  position: absolute;
+  z-index: 1;
+  left: 36px;
+  top: 8px;
+  opacity: .5;
+}
+.fields input[type='password'],.fields input[type='email'],.fields input[type='text'] ,.uploadImg {
+  color: #61BFFF;
+  width: 190px;
+  margin-top: 2px;
+  background: rgba(57, 61, 82, 0);
+  left: 0;
+  padding: 10px 65px;
+  border-top: 2px solid rgba(57, 61, 82, 0);
+  border-bottom: 2px solid rgba(57, 61, 82, 0);
+  border-right: none;
+  border-left: none;
+  outline: none;
+  font-family: 'Microsoft Yahei', sans-serif;
+  box-shadow: none;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */ 
+ color: #D3D7F7;
+} 
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+ color: #D3D7F7;
+} 
+input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+ color: #D3D7F7;
+} 
+input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+ color: #D3D7F7;
+}
+.fields_submit {
+  position: relative;
+  top: 25px;
+  left: 0;
+  width: 80%;
+  right: 0;
+  margin: auto;
+  white-space: nowrap;
+}
+.fields_submit input {
+  border-radius: 10px;
+  margin: 10px 0 0 5px;
+  background: transparent;
+  padding: 5px 10px;
+  border: 2px solid #4FA1D9;
+  color: #4FA1D9;
+  text-transform: uppercase;
+  font-size: 11px;
+  -webkit-transition-property: background,color;
+          transition-property: background,color;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+.fields_submit input:hover {
+  color: white;
+  background: #4FA1D9;
+  cursor: pointer;
+  -webkit-transition-property: background,color;
+          transition-property: background,color;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+.J_codeimg {
+    width: 85px;
+    height: 36px;
+    padding: 3px;
+    z-index: 0;
+    color: #FFF;
+}
+.testtwo {
+  left: -320px ;
+}
+.test {
+  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  top: -100px;
+  -webkit-transform: rotateX(70deg) scale(0.8);
+          transform: rotateX(70deg) scale(0.8);
+  opacity: .6;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+.authent {
+  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+  display: none;
+  background: #35394a;
+  /* Old browsers */
+  /* FF3.6+ */
+
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(53, 57, 74, 0)', endColorstr='rgb(0, 0, 0)',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  position: absolute;
+  left: 0;
+  right: 90px;
+  margin: auto;
+  width: 100px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 20px 70px;
+  top: 200px;
+  bottom: 0;
+  height: 70px;
+  opacity: 0;
+}
+.fields_submit a{
+    font-size: 14px;
+    color: #888;
+    -webkit-transition : color 1s linear;
+    -moz-transition : color 1s linear;
+    -ms-transition : color 1s linear;
+    -o-transition : color 1s linear;
+    transition : color 0.5s linear;
+ }
+.fields_submit a:hover{
+  color: #1a8fb4;
+  cursor: pointer;
+}
+.registerA{
+  margin: 0 0 0 100px;
+}
+.backLogin{
+  margin-right: 120px;
+}
+.valiBtn{
+  height: 30px;
+  width: 89px;
+  padding: 0 ;
+  line-height: 24px;
+  background: transparent;
+  margin-right: 42px;
+  margin-top: 10px;
+  font-size: 10px;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid #4FA1D9;
+  color: #4FA1D9;
+  text-transform: uppercase;
+  -webkit-transition-property: background,color;
+          transition-property: background,color;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+.valiBtn button:hover {
+  color: white;
+  background: #4FA1D9;
+  cursor: pointer;
+  -webkit-transition-property: background,color;
+          transition-property: background,color;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+.fields_update{
+  
+  white-space: nowrap;
+}
+.fields_update span{
+    width: 170px;
+    overflow: hidden;
+    padding: 0;
+}
+.success{
+  text-align: center;
+  color: #fff;
+}

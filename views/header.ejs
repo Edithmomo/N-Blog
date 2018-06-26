@@ -1,0 +1,63 @@
+ <header>
+        <div class="container1">
+            <div id="logo">
+                <h1><a href="#"><img src="/images/logo2.png" alt="博客首页"></a></h1>
+            </div>
+            <div id="sousuo">
+                <form action="" method="POST">
+                    <input type="text" name="searchContent" placeholder="请输入博客名/作者名/博客类型" style="font-size: 14px;">
+                    <input type="submit" value="搜索">
+                </form>
+            </div>
+            <div class="personal">
+                
+                <% if(!user){%>
+                <div style="margin:65px 0 0 10px;"><img src="/images/book.jpg" alt=""><span> ></span></div>
+                <div style="margin:65px 0 0 10px;">
+                    <a href="#"><img src="/images/email.jpg" alt=""></a>
+                    <span>></span>
+                </div>
+                <diV style="margin:65px 0 0 10px;">
+                    <span><a style="color: #999" href="/login">登录</a></span>
+                    <span>|</span>
+                    <span><a style="color: #999" href="/register">注册</a></span>
+                </diV>
+                <%} else{%>
+                <div><img src="/images/book.jpg" alt=""><span> ></span></div>
+                <div>
+                    <a href="#"><img src="/images/email.jpg" alt=""></a>
+                    <span>></span>
+                </div>
+                <div class="dropdown">
+                    <img src="<%= user.headerImg %>" alt="" id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="img-circle" />
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <div class="org_box">
+                            <span class="org_bot_cor_2"></span>
+                        </div> 
+                         <li>
+                       <a href="#"><%=user.userName%></a>
+                       </li> 
+                        <li><a href="/personalData">我的博客</a></li>
+                        <li><a href="#">账号设置</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                        <li>
+                             <form action="" method="POST">
+                                <input type="text" name="logout"  value="true" style="display: none">
+                                 <button type="submit" style="margin-left:  19px;border: none;background-color: #fff;">退出登录</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <%}%>
+            </div>
+            <div id="nav">
+                <nav class="container1">
+                    <ul>
+                        <li class="index on"><a href="/">首页</a></li><li class="piclist">
+                            <a href="/piclist">排行榜</a></li><li class="writeBlog"> 
+                            <a href="/writeBlog">写博客</a></li><li class="aboutAs"> 
+                            <a href="/aboutAs">关于我们</a></li>
+                    </ul>
+                </nav>
+            </div>
+    </header>

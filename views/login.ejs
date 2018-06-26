@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="/layui/css/layui.css" rel="stylesheet" type="text/css" />
+    <link href="/css/login01.css" rel="stylesheet" type="text/css" />
+    <link href="/css/loaders.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+   <div class='layout '>
+	   <div class="login" >
+	   <form action="/login" class="loginForm layui-form" method="POST" >
+	   	 <div class='title'>
+		    <span>登录</span>
+		  </div>
+		  <div class='fields'>
+		    <div class='fields_user'>
+		      <div class='icon'>
+		        <img alt="" src='images/user_icon_copy.png'>
+		      </div>                                     
+		      <input name="userName" placeholder='用户名' lay-verify="username" maxlength="16" type='text' autocomplete="off"/>
+		        <div class='validation'>
+		          <img alt="" src='images/tick.png'>
+		        </div>
+		    </div>
+		    <div class='fields_password'>
+		      <div class='icon'>
+		        <img alt="" src='images/lock_icon_copy.png'>
+		      </div>
+		      <input name="password" placeholder='密码' lay-verify="pass" maxlength="16" type='text' autocomplete="off">
+		      <div class='validation'>
+		        <img alt="" src='images/tick.png'>
+		      </div>
+		    </div>
+		    <div class='fields_password'>
+		      <div class='icon'>
+		        <img alt="" src='images/key.png'>
+		      </div>
+		      <input name="loginCode" id="myValida" lay-verify="required" placeholder='验证码' maxlength="4" type='text' autocomplete="off">
+		      <div class='validation' style="opacity: 1; right: -5px;top: -3px;">
+	          <canvas class="J_codeimg myCanvas" >对不起，您的浏览器不支持canvas，请下载最新版浏览器!</canvas>
+		      </div>
+		    </div>
+		    <div class="fields_submit">
+				<a href="/findpassword" class="forgotA mytab" data-go="findpassword" >忘记密码?</a>
+				<a href="/register" class="registerA mytab" data-go="register" >注册</a>
+				<input class="btn submitBtn" lay-submit="" lay-filter="submitForm" data-value="login" type="button"  value="登录" 
+					style="color:white;"/>
+			</div>
+		  </div>
+		</form>
+	   </div>
+       <div class="register"  style="display: none;">
+       	 <form action="/registers" class="registerForm layui-form" method="POST" enctype="multipart/form-data" >
+	   	 <div class='title'>
+		    <span>注册</span>
+		  </div>
+		  <div class='fields'>
+		  	<div class='fields_email'>
+		      <div class='icon'>
+		        <img alt="" src='images/email_icon_copy.png'>
+		      </div>
+		      <input name="registerEmail" placeholder='email' type='email' lay-verify="email" autocomplete="off"/>
+		        <div class='validation'>
+		          <img alt="" src='images/tick.png'>
+		        </div>
+		    </div>
+
+			<div class='fields_password'>
+		      <div class='icon'>
+		        <img alt="" src='images/key.png'>
+		      </div>
+		      <input name="registerCode" class="valiInp" lay-verify="required" placeholder='验证码' maxlength="6" type='text' autocomplete="off">
+		      <div class='validation' style="opacity: 1; right: -5px;top: -3px;">
+	          <button type="button" class=" layui-btn valiBtn" data-type="register">获取验证码</button>  
+		      </div>
+		    </div>
+		    <div class='fields_user'>
+		      <div class='icon'>
+		        <img alt="" src='images/user_icon_copy.png'>
+		      </div>
+		      <input name="userName" lay-verify="username" placeholder='用户名' maxlength="16" type='text' autocomplete="off"/>
+		        <div class='validation'>
+		          <img alt="" src='images/tick.png'>
+		        </div>
+		    </div>
+		    <div class='fields_password'>
+		      <div class='icon'>
+		        <img alt="" src='images/lock_icon_copy.png'>
+		      </div>
+		      <input name="password" placeholder='密码' lay-verify="pass" maxlength="16" type='text' autocomplete="off">
+		      <div class='validation'>
+		        <img alt="" src='images/tick.png'>
+		      </div>
+		    </div>
+		    <div class='fields_password'>
+		      <div class='icon'>
+		        <img alt="" src='images/lock_icon_copy.png'>
+		      </div>
+		      <input name="password1" placeholder='再次输入密码' lay-verify="pass1" maxlength="16" type='text' autocomplete="off">
+		      <div class='validation'>
+		        <img alt="" src='images/tick.png'>
+		      </div>
+		    </div>
+		     <div class="fields_password fields_update" >
+		      <div class='icon'>
+		        <img alt="" src='images/xiazai_icon_copy.png'>
+		      </div>
+		    	<button class="uploadImg" type="button" name="headerImg" style="width: 100px;padding: 10px 0; margin-left: 47px; color: #D3D7F7;">上传图片</button>
+		    </div>
+		    <div class="fields_submit" style="top: 0;">
+				<a href="/login" class="btn backLogin mytab" data-go="login">返回登录</a>
+				<input class="btn btn-primary" id="registerBtn" data-value="register"  lay-submit="" lay-filter="submitForm" type="button" value="注册" 
+					style="color:white;"/>
+			</div>
+		  </div>
+	   </form>
+	   </div>
+	   <div class="findpassword" style="display: none;"  >
+	   	 <form action="/registers" class="findpasswordForm layui-form" method="POST" >
+	   	 <div class='title'>
+		    <span>找回密码</span>
+		  </div>
+		  <div class='fields'>
+		  	<div class='fields_email'>
+		      <div class='icon'>
+		        <img alt="" src='images/email_icon_copy.png'>
+		      </div>
+		      <input name="findpasswordEmail" placeholder='email' lay-verify="email" type='email' autocomplete="off"/>
+		        <div class='validation'>
+		          <img alt="" src='images/tick.png'>
+		        </div>
+		    </div>
+            
+			<div class='fields_password'>
+		      <div class='icon'>
+		        <img alt="" src='images/key.png'>
+		      </div>
+		      <input name="findpasswordCode" class="valiInp" lay-verify="required" placeholder='验证码' maxlength="6" type='text' autocomplete="off">
+		      <div class='validation' style="opacity: 1; right: -5px;top: -3px;">
+	          <button type="button" class=" layui-btn valiBtn " data-type="findpassword">获取验证码</button>  
+		      </div>
+		    </div>
+		    <div class='fields_password'>
+		      <div class='icon'>
+		        <img alt="" src='images/lock_icon_copy.png'>
+		      </div>
+		      <input name="password" placeholder='密码' lay-verify="pass" maxlength="16" type='text' autocomplete="off">
+		      <div class='validation'>
+		        <img alt="" src='images/tick.png'>
+		      </div>
+		    </div>
+		    <div class='fields_password'>
+		      <div class='icon'>
+		        <img alt="" src='images/lock_icon_copy.png'>
+		      </div>
+		      <input name="password1" placeholder='再次输入密码' lay-verify="pass1" maxlength="16" type='text' autocomplete="off">
+		      <div class='validation'>
+		        <img alt="" src='images/tick.png'>
+		      </div>
+		    </div>
+		    <div class="fields_submit" style="top: 0;">
+				<a href="/login" class="backLogin mytab" data-go="login">返回登录</a>
+				<input class="btn btn-primary"  lay-submit="" lay-filter="submitForm" type="button" value="提交" 
+					style="color:white;"/>
+			</div>
+		  </div>
+	   </form>
+	   </div>
+	  <div class='success'>
+	  </div>
+	  <div class='disclaimer'>
+	    <p>&copy; 2018 N-blog</p>
+	  </div>
+	</div>
+	<div class='authent'>
+	  <div class="loader" style="height: 44px;width: 44px;margin-left: 28px;">
+        <div class="loader-inner ball-clip-rotate-multiple">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        </div>
+	  <p>认证中...</p>
+	</div>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="/js/Particleground.js"></script>
+<!-- <script src="./validata.js"></script> -->
+<script src="/js/login.js"></script>
+</html>

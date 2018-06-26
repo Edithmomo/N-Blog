@@ -1,0 +1,142 @@
+.myMar {
+  margin: 40px;
+}
+.mymar {
+  margin-top: 40px;
+}
+.myParMin {
+  padding: 40px;
+}
+.myPMMin {
+  margin: 20px;
+  padding: 20px;
+}
+.myImgA {
+  padding-top: 6px!important ;
+  padding-bottom: 0!important ;
+}
+.myMin {
+  margin-top: 20px;
+}
+.myBtn {
+  font-size: 12px;
+  height: 3vw;
+  margin: 0;
+  padding: 0;
+}
+.myCenter {
+  width: 100vw;
+  text-align: center;
+}
+.myWid {
+  width: 10vw;
+}
+.myTextcen {
+  display: flex;
+  align-items: center;
+}
+.hintIcon {
+  position: absolute;
+  right: -10vw;
+  top: 1vw;
+}
+.myAlign {
+  justify-content: center;
+}
+.myPos {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+.mybg {
+  width: 30vw;
+  height: 20vw;
+  padding-top: 7vw;
+  text-align: center;
+}
+.serchBox {
+  width: 24vw;
+  height: 3vw;
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+}
+.serchInput {
+  border-width: 0;
+}
+.serchInput:focus {
+  border-width: 0;
+  box-shadow: 0 0 10px #fff;
+}
+.headerImg {
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 50%;
+}
+.myLi {
+  border: none;
+  margin-top: 10px;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: space-around;
+}
+.mybgcolor {
+  background-color: #ececec;
+}
+.myContent,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  color: #333;
+  text-decoration: none;
+}
+.InfoList {
+  width: 60%;
+  padding: 0;
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.InfoList li {
+  list-style: none;
+}
+.readNumList {
+  list-style: none;
+  margin-top: 20px;
+}
+.readNumList span {
+  display: inline-block;
+  color: #20B2AA;
+  font-size: 16px;
+  margin: 10px 5px 4px 0;
+}
+.item img {
+  width: 100vw;
+  height: 20vw!important;
+}
+.myMarR {
+  margin-right: 20px;
+}
+.myJustStart {
+  justify-content: flex-start;
+}
+.myJustEnd {
+  display: flex;
+  justify-content: flex-end;
+}
+.myUlLi {
+  list-style: none;
+  height: 20px;
+  padding-left: 20px;
+}
+.myLiRight {
+  margin-left: 35vw !important;
+}
+.mybgcolorWhite {
+  background-color: #fff;
+}

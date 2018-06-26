@@ -1,0 +1,23 @@
+div .write_title{
+	font-size: 16px;
+	border-radius: 5px;
+	font-family: "黑体";
+}
+.com{
+	padding-top: 70px;
+	margin:0 auto;
+	margin-top: 10px;
+	width: 72em;
+	height:650px;
+	background: url(/images/diwen.jpg);
+	box-shadow: 5px 5px 5px #888888;
+}
+ canvas {
+    padding:0;
+    margin:0;
+}
+div.btnbg {
+    position:fixed;
+    left:0;
+    top:0;
+}

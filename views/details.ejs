@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%=title%>
+    </title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/details.css">
+</head>
+
+<body>
+    <%-include header%>
+        <div class="public">
+            <article class="article fl">
+                <div class="title_h">
+                    <h2><span class="glyphicon glyphicon-list-alt"></span>文章的标题链接</h2>
+                </div>
+                <div class="title_content">
+                    <div class="mybgcolor myParMin" style="padding-top: 10px;">
+                        <%- data%>
+                    </div>
+                </div>
+                <div class="title_h">
+                    <h2><span class="glyphicon glyphicon-magnet"></span><a href="">评论专区</a></h2>
+                </div>
+                <%if(!user){%>
+                    <div style="background:#999; height: 40px; text-align:center;padding:5px;color:#fff; margin-top: 10px;">
+                        <h4>目前您尚未登录，请点击<a style="color:rgb(248, 8, 8);" href="/login">登录</a>或<a style="color:rgb(248, 8, 8);" href="/register">注册</a>后评论</h4>
+                    </div>
+                    <%}else{%>
+                        <form method="POST" class="comment" style="padding-left: 10px;">
+                            <div class="form-group row  ">
+                                <div class="col-sm-11 col-xs-11  ">
+                                    <textarea name="commentInfo" class="form-control w" rows="3" maxlength="300" style="resize:none; "></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row col-sm-offset-9 col-xs-offset-8">
+                                <button type="submit" class="btn btn-success col-sm-5 col-xs-5">发表评论</button>
+                            </div>
+                        </form>
+                        <%}%>
+                            <div class="comment">
+                                <%- comment%>
+                            </div>
+            </article>
+            <aside article class="aside fr">
+                <div class="aside_list ">
+                    <div class="pers">
+                        <%- auther%>
+                    </div>
+                    <div class="lainjie">
+                        <h3 class="youqin">友情链接</h3>
+                        <ul>
+                            <%- moreList%>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+</body>
+<script type="text/javascript" src="/js/jQuery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script src="/js/idangerous.swiper.js"></script>
+<script>
+$(function() {
+            $(".piclist").removeClass("on");
+            $(".piclist").siblings().removeClass("on");
+            var flag = 1;
+            var num = parseInt($(".date_dian").html());
+            var support = num;
+            $(".glyphicon-thumbs-up").on("click", function() {
+                if (flag == 1) {
+                    $(".glyphicon-thumbs-up")[0].style.color = "#888";
+                    num += 1;
+                    $(".date_dian")[0].innerHTML = num;
+                    flag = 0;
+                    $(".glyphicon-thumbs-up")[0].title = "取消点赞";
+                } else {
+                    $(".glyphicon-thumbs-up")[0].style.color = "#FF0040";
+                    flag = 1;
+                    num = num - 1;
+                    $(".date_dian")[0].innerHTML = num;
+                    $(".glyphicon-thumbs-up")[0].title = "点赞";
+                }
+            })
+            if($(".myBlogContent").height()<1000){
+                 $(".moreRead").hide();
+            }else{
+                $(".myBlogContent").height(790);
+            }
+            $(".moreRead").on("click",()=>{
+                $(".myBlogContent").css("height","auto");
+                $(".moreRead").hide();
+            })
+            window.onscroll = function(e) {
+                if ($(document).scrollTop() >= 260) {
+                    $(".aside").css({ "position": "fixed", "top": "0vw", "left": "71vw", "margin-top": 0 });
+                } else {
+                    $(".aside").css({ "position": "static", "margin-top": "10px" });
+                }
+            }
+
+            window.onbeforeunload = function() {
+            	   num = parseInt($(".date_dian").html());
+                    if (support != num) {
+                        $.ajax({
+                            type: "POST",
+                            url: "",
+                            data: { support: num },
+                            success:(data)=>{
+                            	console.log("成功")
+                            }
+                        })
+                    }
+                    // return false;
+                }
+            })
+</script>
+</html>

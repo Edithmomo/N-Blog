@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_630997_elzk0loq3lvunmi.css">
+    <link rel='stylesheet' href='/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/css/login.css' />
+  </head>
+  <body>
+    <div class="myMar">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" ><a href="/login#home" aria-controls="home" role="tab" data-toggle="tab">登录</a></li>
+          <li role="presentation" class="active "><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">注册</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane " id="home">...</div>
+          <div role="tabpanel" class="tab-pane active" id="profile">
+            <form method="POST" enctype="multipart/form-data">
+              <div class="container-fluid myMin col-sm-offset-2">
+                <div class="form-group row myTextcen">
+                    <label class="col-sm-2 col-xs-4 text-right" for="exampleInputEmail1">邮箱</label>
+                    <div class=" col-sm-3 col-xs-6">
+                     <input type="email" name="email" class="form-control emailInput" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    
+                    <!-- <button>ceshi</button> -->
+                </div>
+                <div class="form-group row myTextcen">
+                  <label class="col-sm-2 col-xs-4 text-right" for="emailVerify">验证码</label>
+                  <div class="col-sm-2 col-xs-4">
+                    <input type="text" name="emailVerify" class="form-control" id="emailVerify" placeholder="验证码">
+                  </div>
+                  <button type="button" id="btn_email" class="btn col-sm-1 col-xs-2 myBtn">获取验证码</button>
+                </div>
+                <div class="form-group row myTextcen">
+                  <label class="col-sm-2 col-xs-4 text-right" for="exampleInputUser">用户名</label>
+                  <div class="col-sm-3 col-xs-6">
+                    <input type="text" name="userName" class="form-control" id="exampleInputUser" placeholder="用户名">
+                  </div>
+                </div>
+                <div class="form-group row myTextcen">
+                  <label class="col-sm-2 col-xs-4 text-right" for="exampleInputPassword1">密码</label>
+                  <div class="col-sm-3 col-xs-6"> 
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="密码">
+                  </div>
+                </div>
+                <div class="form-group row myTextcen">
+                  <label class="col-sm-2 col-xs-4 text-right" for="exampleInputPassword2">再次输入密码</label>
+                  <div class="col-sm-3 col-xs-6"> 
+                    <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword2" placeholder="密码">
+                  </div>
+                </div>
+                <div class="form-group row myTextcen headerBox">
+                  <label class="col-sm-2 col-xs-4 text-right" for="exampleInputFile">头像</label>
+                  <div  class="col-sm-3 col-xs-6">  
+                    <input type="file" multiple="multiple" accept="image/*" name="headerImg"  id="exampleInputFile">
+                  </div>
+                </div>
+               
+              <div class="row">
+                <button type="submit" class="btn col-sm-3 col-xs-6 col-sm-offset-2 col-xs-offset-4 btn-success">注册</button>
+              </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div> 
+      <%if(status==1){%>
+        <div class="myTextcen myAlign myPos" >
+           <div class="bg-success mybg">
+             <p>注册成功!</p>
+             <button class="btn btnSuccess">确认</button>
+           </div>
+        </div>
+        <%}else if(status==2){%>
+        <div class="myTextcen myAlign myPos" >
+           <div class="bg-success mybg">
+             <p>服务器出错了!</p>
+             <button class="btn myBtnQR">确认</button>
+           </div>
+        </div>
+        <%}else if(status==3){%>
+         <div class="myTextcen myAlign myPos" >
+             <div class="bg-success mybg">
+               <p>验证码错误!</p>
+               <button class="btn myBtnQR">确认</button>
+             </div>
+          </div>
+          <%}%>
+  </body>
+  <script src="/js/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+  <script src="/javascripts/emailVerify.js"></script>
+  <script>
+   $(function(){
+     validate("form");
+     $(".myBtnQR").on("click",()=>{
+        location.replace(location.href)
+      })
+      $(".btnSuccess").on("click",()=>{
+        location.replace("/login")
+      })
+     $("#exampleInputFile").on("change",(e)=>{
+      readFile();
+     })
+    $("#btn_email").on("click",(e)=>{
+      var data = {email:$(".emailInput").val()} ;
+      // emailAjax(data);
+      $.ajax({ 
+        type:"POST",
+        url:"?email=true",
+        data: data,
+        success:(data)=>{
+          switch(data.ajaxStatus){
+            case 1:
+                  $(".hintIcon").remove();
+                  $(".emailInput").after("<span class='iconfont icon-cuo hintIcon text-danger'>邮箱已注册</span>")
+                  break;
+            case 2:
+                  $(".hintIcon").remove();
+                  $(".emailInput").after("<span class='iconfont icon-icon hintIcon text-success'>邮箱未注册</span>")
+                  break;
+          }
+        }
+      })
+    })
+     
+
+     var readFile = ()=>{
+       var file = $("#exampleInputFile")[0].files[0];
+       if(!/image\/\w+/.test(file.type)){
+         alert("请上传一张图片！");
+         $("#exampleInputFile").val("");
+         return false
+       }
+       if(!window.FileReader){
+             alert("浏览器版本过低请升级！！！")
+          }else{
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function(e){
+              $(".headerBox").after(` <div class="form-group row myTextcen">
+                  <label class="col-sm-2 col-xs-4 text-right" for="exampleInputFile1">预览</label>
+                  <img src=${this.result} alt="" class="showImg col-sm-3 col-xs-6">
+                </div>`)
+            }
+          }
+     }
+   })
+  </script>
+</html>

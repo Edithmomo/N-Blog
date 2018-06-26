@@ -1,0 +1,37 @@
+*{
+	margin:0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+.introduce{
+	width: 1400px;
+	height:670px;
+	color: #fff;
+	margin: 20px;
+}
+.fixed_list{
+	position: fixed;
+	z-index: 200;
+	top: 200px;
+	right: 10px;
+	width: 150px;
+	height:220px;
+	background: url(/images/huangren.png);
+	border-radius: 10px;
+	box-shadow: 5px 10px 10px  #FFFF00;
+}
+.fixed_list ul li{
+	margin-top: 20px;
+	text-align: center;
+}
+.fixed_list ul li a:hover{
+	background:	#548C00;
+}
+.fixed_list ul li a{
+	color: #000;
+	/*background: #f4f4f4;*/
+	box-shadow: 5px 3px 5px #7B7B7B;
+	border: solid 1px #888;
+	border-radius: 5px;
+}
