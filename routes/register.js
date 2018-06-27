@@ -12,11 +12,13 @@ var multipartMiddleware = multiparty();
 
 router.use(multiparty({uploadDir:path.dirname(__dirname)+'/public/headerImg' }));
 
-router.get('/', function(req, res, next) {
-  res.render('register', { title: '注册' ,status: 0});
-});
+// router.get('/', function(req, res, next) {
+//   res.render('register', { title: '注册' ,status: 0});
+// });
 
-router.post("/",multipartMiddleware,function(req,res,next){
+router.post("/",function(req,res,next){
+  console.log("--register-----")
+    console.log(req.body)
     var user = req.body;
     if(req.query.email){//判断时邮箱验证还是表单提交
       if(req.body.type=="register"){
@@ -64,18 +66,26 @@ router.post("/",multipartMiddleware,function(req,res,next){
         return   res.send({href:"/register",status:2,text:"验证码错误！"}); 
       }
     }else{
+      console.log("--1-----")
       var imgPath = "";
       if(req.files.file){
-        imgPath = req.files.file;
+        imgPath = req.files.file.path;
+        console.log(req.files)
       }else{
-        imgPath = "diwen.jpg";
+        imgPath = "../images/diwen.jpg";
       }
+      console.log("--11-----")
+      console.log("imgPath"+imgPath)
      user.headerImg = "../headerImg/" + path.basename(imgPath);
+      console.log("--13-----")
      user.email = user.registerEmail;
+      console.log("--14-----")
      user.blogNumber = 0;
      user.support = 0;
      delete user.password1;
+      console.log("--15-----")
      delete user.registerEmail;
+     console.log("--12-----")
      userInputDb(user,req,res);//插入 数据库
     }
   })
@@ -124,8 +134,10 @@ var randNumFun=function(){
  * 返回 状态码
  */
 var userInputDb = (user,req,res)=>{
+  console.log("--2-----")
   var userEmail = req.session.userEmail || "";
   if(user.email == userEmail.email && user.registerCode == userEmail.randNum){
+    console.log("--3-----")
       delete user.registerCode;
       userDb.Input(user)
             .then(function(data){
@@ -139,6 +151,7 @@ var userInputDb = (user,req,res)=>{
               return  res.send({href:"/register",status:2,text:"数据库写入失败,注册失败"}); 
           });
   }else{
+    console.log("--4-----")
     return   res.send({href:"/register",status:2,text:"验证码错误！"}); 
   }
 }

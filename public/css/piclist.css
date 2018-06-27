@@ -63,6 +63,9 @@
 	margin-right: 5px;
 	color: #fff;
 }
+.aside_list ul .dataErr:before{
+	content:normal;
+}
 .aside_list ul li{
 	counter-increment: listxh;
 	display: inline-block;

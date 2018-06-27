@@ -23,7 +23,16 @@
                 </div>
                 <div class="title_content">
                     <div class="mybgcolor myParMin" style="padding-top: 10px;">
-                        <%- data%>
+                    <%if(data){%>
+                         <%- data%>
+                    <%}else{%>
+                        <ul style="margin-top: 40px;">
+                            <li class="text-center">
+                                <img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+                            </li>
+                            <li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+                        </ul>
+                      <%}%>
                     </div>
                 </div>
                 <div class="title_h">
@@ -57,7 +66,14 @@
                     <div class="lainjie">
                         <h3 class="youqin">友情链接</h3>
                         <ul>
-                            <%- moreList%>
+                             <%if(moreList){%>
+                                 <%- moreList%>
+                            <%}else{%>
+                                    <li class="text-center">
+                                        <img src="/images/datalose.png" alt="" style="width: 100px;height: 100px">
+                                    </li>
+                                    <li ><h4 class="text-center" style="color: #bfbfbf;">数据丢失</h4></li>
+                              <%}%>
                         </ul>
                     </div>
                 </div>

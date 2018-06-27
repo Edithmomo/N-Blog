@@ -93,6 +93,7 @@ var stringJoinBlog = (data) => {
         temp.forEach((item, index) => {
             strContent += `<p>${item}</p>`
         });
+        console.log(item)
         commentNum = item.commentNum;
         strData += `
         <ul class="list-group">
@@ -102,7 +103,7 @@ var stringJoinBlog = (data) => {
               <h2 style="margin-bottom: 20px;">${item.theme}</h2>
             </a>
               <ul class="nav-pills InfoList myJustStart myMin">
-                  <li ><span class="	glyphicon glyphicon-bookmark mar_gly"></span><span class="myMarR">类型:${item.lable}</span></li>
+                  <li ><span class="glyphicon glyphicon-bookmark mar_gly"></span><span class="myMarR">类型:${item.lable}</span></li>
               </ul>
               <ul class="nav-pills myUlLi" style="margin-top: 10px;">
                   <li ><a href="#" class="myMarR"><span class="glyphicon glyphicon-time mar_gly"></span>${item.time}</a><a href="#">作者：${item.userName}</a></li>

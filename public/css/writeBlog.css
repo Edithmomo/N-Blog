@@ -12,16 +12,12 @@
 	background-color: rgba(0,0,0,0);
 	box-shadow: 5px 5px 5px #888888;
 }
-.beijing{
+#sakura{
 	z-index: -1;
-	width: 88.2%;
+	width: 72em;
 	height: 800px;
-	display: fixed;
 	position: absolute;
-	/*left: 0;
-	top: 0;*/
 }
-
 label{
    font-size: 20px;
    color: #fff;

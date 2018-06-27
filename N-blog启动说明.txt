@@ -1,0 +1,8 @@
+要求：电脑需要安装nodejs
+      安装mongodb数据库
+步骤：1、在cmd界面下，cd的N-blog目录下
+      2、输入npm i 回车等待其下载所需的资源模块
+      3、在mongodb中创建N-blog数据库
+      4、在cmd界面中输入npm start
+      5、在浏览器中输入localhost:3000
+注意：初始运行时，所以数据都为空！

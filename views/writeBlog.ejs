@@ -9,12 +9,8 @@
   </head>
   <body>
       <%-include header%>
-      <div class="com" >
-       <div class="beijing">
-                  <canvas id="sakura"  ></canvas>
-                   <div class="btnbg">
-                   </div>
-            </div>
+      <div class="com beijing" >
+           <canvas id="sakura"  ></canvas>
             <form method="POST">
               <div class="form-group row col-sm-offset-1 col-xs-offset-2">
                 <div class="col-sm-8 col-xs-10  "  style="font-size: 20px;color: #fff;">
@@ -27,11 +23,11 @@
                 <div class="form-group col-sm-3 col-xs-6">
                 <label for="theme">文章类型</label>
                   <br/>
-                  <select name="title" class="write_title" style="background: #888;">
-                      <option value="smart">人工智能</option>
-                      <option value="Cloud">云计算/大数据</option>
-                      <option value="game">游戏开发</option>
-                      <option value="qianduan">前端</option>
+                  <select name="lable" class="write_title" style="background-color: rgba(250,250,250,0.8);">
+                       <option value="人工智能">人工智能</option>
+                       <option value="云计算/大数据">云计算/大数据</option>
+                       <option value="游戏开发">游戏开发</option>
+                       <option value="前端">前端</option>
                     </select>
                 </div>
               </div>
@@ -51,6 +47,7 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/js/writeBlog.js"></script>
+   <script src="/js/menu.js"></script>
   <script id="sakura_point_vsh" type="x-shader/x_vertex" src="/js/writeBolg2.js">
 
 uniform mat4 uProjection;

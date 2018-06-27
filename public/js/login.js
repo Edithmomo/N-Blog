@@ -12,6 +12,7 @@
          });
      }
  var hrefAddr = window.location.href.split("3000/")[1];
+ hrefAddr = hrefAddr.split("?")[0];
  if(hrefAddr != "login"){
     $(".login").hide()
     if (hrefAddr == "register") {
@@ -190,32 +191,42 @@
  })
 
 $(".valiBtn").on("click",(e)=>{
-    console.log(123)
   var type = $(e.target).data("type");
-  var data = {email:$("input[name="+type+"Email]").val(),type} ;
-  $.ajax({ 
-    type:"POST",
-    url:"/registers?email=true",
-    data: data,
-    success:(data)=>{
-      switch(data.ajaxStatus){
-        case 1:
-              ErroAlert("邮箱已注册！请重新输入");
-              // $("input[name="+type+"Email]").val("");
-              break;
-        case 2:
-              DoneAlert("验证码发送成功");
-              break;
-        case 3:
-               ErroAlert("邮箱未注册！请重新输入");
-               // $("input[name="+type+"Email]").val("");
-              break;
-        case 4:
-              DoneAlert("验证码发送成功");
-              break;
-      }
+  var email = $("input[name="+type+"Email]").val();
+  if(email){
+    var myReg=/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+　　if(myReg.test(email)){
+　　　　 var data = {email:email,type} ;
+          $.ajax({ 
+            type:"POST",
+            url:"/registers?email=true",
+            data: data,
+            success:(data)=>{
+                console.log(data)
+              switch(data.ajaxStatus){
+                case 1:
+                      ErroAlert("邮箱已注册！请重新输入");
+                      // $("input[name="+type+"Email]").val("");
+                      break;
+                case 2:
+                      DoneAlert("验证码发送成功");
+                      break;
+                case 3:
+                       ErroAlert("邮箱未注册！请重新输入");
+                       // $("input[name="+type+"Email]").val("");
+                      break;
+                case 4:
+                      DoneAlert("验证码发送成功");
+                      break;
+              }
+            }
+          })
+　　}else{
+　　　　 ErroAlert("邮箱格式不合法！请重新输入");
     }
-  })
+   }else{
+    ErroAlert("邮箱不能为空！请重新输入");
+   }
 })
 
  //生成验证码

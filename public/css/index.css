@@ -343,6 +343,9 @@ section .rengong h2 a{width: 532px;}
 	margin-right: 5px;
 	color: #fff;
 }
+#Cloud_b .dataErr:before{
+	content:normal;
+}
 #Cloud_b li{
 	counter-increment: listxh;
 	display: inline-block;
