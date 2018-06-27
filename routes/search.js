@@ -41,7 +41,7 @@ router.get('/', function(req, res, next) {
             																			            .then((data)=>{
             																			            	var qianDuan = moreListStr(data);
             																			            	dataStr.qianDuan=qianDuan;
-            																			              return res.render('search', { title: 'Express',user:req.session.userName,dataStr,searchContent,type,pager});
+            																			              return res.render('search', { title: '查询结果',user:req.session.userName,dataStr,searchContent,type,pager});
             																			            })
             														            })
             									            })

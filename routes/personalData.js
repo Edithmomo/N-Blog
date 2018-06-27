@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
                             return userBlogDb.findBlogNum({},8)
                                 .then((data) => {
                                     var moreList = moreListStr(data);
-                                    return res.render('personalData', { title: 'Express', user: user, data: strBlog,auther, moreList,pager});
+                                    return res.render('personalData', { title: '我的博客', user: user, data: strBlog,auther, moreList,pager});
                                 })
 
                         })

@@ -15,18 +15,15 @@ router.get('/', function(req, res, next) {
           .then((data)=>{
             var strBlog = stringJoinBlog(data);
              readNum = data[0].readNum+1;
+             console.log(123)
              return commentDb.findComment({blogId:ObjectId(blogIngoId)})
                       .then((data)=>{
                         var strComment = stringJoinComment(data);
-                        return res.render('blogContent', { title: 'Express',user:user,data:strBlog,comment:strComment});
+                        userDb.upBlog({_id:ObjectId(blogIngoId)},{$set:{readNum:readNum}})
+                        return res.render('blogContent', { title: '博客内容',user:user,data:strBlog,comment:strComment});
                       })
-            
           })
-          .then((date)=>{
-            console.log("xiugai")
-           userDb.upBlog({_id:ObjectId(blogIngoId)},{$set:{readNum:readNum}})
-          })
-  res.render('blogContent', { title: 'Express',data:"data",user:"user",comment:"strComment"});
+  // res.render('blogContent', { title: 'Express',data:"data",user:"user",comment:"strComment"});
 });
 
 router.post("/" ,function(req,res,next){
@@ -44,8 +41,6 @@ router.post("/" ,function(req,res,next){
         };
   commentDb.upComment({blogId:ObjectId(blogIngoId)},{$push:{commentInfo:addComment}})
         .then(function(data){
-          console.log(blogIngoId)
-          console.log(addComment)
           console.log("评论成功");
           res.send();
         })

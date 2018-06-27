@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 																				            .then((data)=>{
 																				            	var qianDuanRankings = moreListStr(data,5);
 																				            	dataStr.qianDuan=qianDuanRankings;
-																				              return res.render('piclist', { title: 'Express',user:req.session.userName,dataStr});
+																				              return res.render('piclist', { title: '排行榜',user:req.session.userName,dataStr});
 																				            })
 															            })
 										            })

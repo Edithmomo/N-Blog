@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   req.session.userName=req.session.userName;
   user=req.session.userName;
   if(user){
-    res.render('writeBlog', { title: 'Express',user:user });
+    res.render('writeBlog', { title: '写博客',user:user });
   }else{
     res.redirect("/login?writeBlog=true");
   }

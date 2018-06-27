@@ -11,7 +11,7 @@ var blogIngoId;
 var commentNum;
 var auther;
 router.get('/', function(req, res, next) {
-    user = req.session.userName;
+    user = req.session.userName ||"";
     var readNum = 0;
     blogIngoId = req.query._id;
     // blogIngoId = "5b03ec0244f2ef2da065ed4b";
@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
                             return userBlogDb.findBlogNum({ theme: { $ne: theme }, lable:new RegExp(lable) },8)
                                 .then((data) => {
                                     var moreList = moreListStr(data);
-                                    return res.render('details', { title: 'Express', user: user, data: strBlog, comment: strComment, auther:userAuther, moreList });
+                                    return res.render('details', { title: '博客内容', user: user, data: strBlog, comment: strComment, auther:userAuther, moreList });
                                 })
 
                         })
@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
 
         })
         .then((date) => {
-             if(auther != user.email){
+             if(!user || auther != user.email){
                  userBlogDb.upBlog({ _id: ObjectId(blogIngoId) }, { $set: { readNum: readNum } })
             }
         })
@@ -93,7 +93,6 @@ var stringJoinBlog = (data) => {
         temp.forEach((item, index) => {
             strContent += `<p>${item}</p>`
         });
-        console.log(item)
         commentNum = item.commentNum;
         strData += `
         <ul class="list-group">

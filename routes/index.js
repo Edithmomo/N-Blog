@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
                                       .then((data)=>{
                                         var qianDuan = lsitStr(data,5);
                                         dataStr.qianDuan=qianDuan;
-                                        return res.render('index', { title: 'Express',user:req.session.userName,dataStr});
+                                        return res.render('index', { title: 'N-Blog',user:req.session.userName,dataStr});
                                       })
                             })
                        
