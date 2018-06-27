@@ -38,7 +38,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req, res, next){
-	console.log(req.body)
 	if(req.body.logout){
        req.session.userName ="";
        res.redirect('/personalData')

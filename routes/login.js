@@ -19,7 +19,6 @@ router.get('/', function(req, res, next) {
        req.session.hostryHref = "/";
     }
   }
-  console.log(req.session.hostryHref)
   res.render('login', { title: '登录' ,status:1});
 });
 router.post('/', function(req, res, next) {
@@ -27,7 +26,6 @@ router.post('/', function(req, res, next) {
   delete user.loginCode;
   userDb.findLogin(user)
         .then((data)=>{
-          console.log(data)
          if(data){
             req.session.userName = data;
            return res.send({href:req.session.hostryHref,status:200,text:"登录成功<br /><br />欢迎回来"});

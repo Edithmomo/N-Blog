@@ -21,10 +21,8 @@ router.get('/', function(req, res, next) {
                                         dataStr.qianDuan=qianDuan;
                                         return res.render('index', { title: 'N-Blog',user:req.session.userName,dataStr});
                                       })
-                            })
-                       
+                            }) 
               })
-  // res.render('index', { title: 'Express',user:req.session.userName,media,cloud,webData,data:""});
 });
 
 router.post("/" ,function(req,res,next){
